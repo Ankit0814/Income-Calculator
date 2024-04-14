@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+<body>
+    <p>Hello jarviss!</p>
+    <div class="container " id="calculator" >
+<div class="sub-container">
+    <form>
+        <div class="form-group mt-2">
+          <label for="grossannual">Enter gross annual income</label>
+          <div class="input-field">
+          <input type="text" class="form-control" id="grossannual"  placeholder="Enter gross annual income" onchange="getValue(this.value,this.id)" required>
+          <div class="error-icon" id="annual" style="display: none;" title="">!</div>
+        </div>
+      </div>
+        <div class="form-group mt-2">
+          <label for="extraincome">Enter extra income</label>
+          <div class="input-field">
+          <input type="text" class="form-control" id="extraincome" placeholder="Enter extra income from other source" onchange="getValue(this.value,this.id)" required>
+          <div class="error-icon" id="extra" style="display: none;"  title="">!</div>
+        </div>
+        </div>
+        <div class="dropdown form-group mt-2">
+            <label for="exampleInputPassword1">Enter age group</label>
+            <select id="mySelect" class="form-select"style="font-size: 14px !important; font-weight: 400 !important;" required>
+                <option >Select age group</option>
+                <option value="40"> < 40 </option>
+                <option value="40 to 60"> ≥ 40 but < 60 </option>
+                <option value="60"> >60 </option>
+              </select>
+          </div>
+          <div class="form-group mt-2">
+            <label for="deduction">Enter total applicable deductions</label>
+            <div class="input-field">
+            <input type="text" class="form-control" id="deduction" placeholder="Add total applicable deductions" onchange="getValue(this.value,this.id)" required>
+            <div class="error-icon" id="dedu" style="display: none;"  title="">!</div>
+          </div>
+          </div>
+          <div class="button mt-4 text-center">
+          <button type="submit" class="btn btn-primary" onclick="getTotalIncome(event)">Submit</button>
+        </div>
+      </form>
+</div>
+    </div>
+<div id="model" style="display: none;">
+    <div class="container container-1">
+    </div>
+    <div class="tax-container">
+<h3>Your overall income will be</h3>
+<lable id="totalIncomeLabel" style="font-weight: 600;"></lable>
+<p>after tax deductions</p>
+<div class="mt-4 text-center">
+  <button type="submit" class="btn btn-primary" onclick="closemodel(event)">Close</button>
+</div>
+    </div>
+    <div class="container container-2"></div>
+  </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="Index.js"></script>
+</body>
+</html>
