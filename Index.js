@@ -50,6 +50,7 @@ function getTotalIncome(event){
     if (!validateFields()) {
         return;
     }
+
 totalIncome=annualIncome+extraIncome-deduction;
 if(totalIncome<=800000){
     totalIncomeLabel.innerHTML = totalIncome.toFixed(2);
@@ -89,16 +90,19 @@ function validateFields() {
     const extraIncomeInput = document.getElementById('extraincome').value;
     const deductionInput = document.getElementById('deduction').value;
     const ageGroupSelect = document.getElementById('mySelect').value;
-
+    const validNumberPattern = /^\d+(\.\d+)?$/;
 
     if (
         annualIncomeInput === "" ||
         extraIncomeInput === "" ||
         deductionInput === "" ||
-        ageGroupSelect === "Select age group"
+        ageGroupSelect === "Select age group" ||
+        !validNumberPattern.test(annualIncomeInput) ||
+        !validNumberPattern.test(extraIncomeInput) ||
+        !validNumberPattern.test(deductionInput)
     ) {
    
-        alert("Please fill out all fields and select an age group before submitting.");
+        alert("Please fill out all fields and enter numbers also select an age group before submitting.");
         return false;
     }
     return true;
